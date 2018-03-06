@@ -11,6 +11,9 @@ RUN cp /cntk/Examples/Image/Detection/utils/py-faster-rcnn/lib/nms/gpu_nms.cpyth
 RUN cp /cntk/Examples/Image/Detection/utils/py-faster-rcnn/lib/nms/cpu_nms.cpython-35m-x86_64-linux-gnu.so /cntk/Examples/Image/Detection/utils/cython_modules/ 
 
 WORKDIR /cntk/Examples/Image/Detection/FasterRCNN
+
+RUN apt-get update && apt-get install -y python-pip
+
 RUN bash -c 'git config --system core.longpaths true'
 RUN bash -c 'pip install "git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-vision-customvision&subdirectory=azure-cognitiveservices-vision-customvision"'
 COPY . /cv_workshop
