@@ -4,7 +4,7 @@ LABEL maintainer "MICROSOFT CORPORATION"
 
 RUN /root/anaconda3/envs/cntk-py35/bin/conda install -y -n cntk-py35 cython boost
 
-RUN apt-get update && apt-get install -y python-pip
+RUN apt-get update && apt-get install -y python-pip && apt-get install git-core
 
 RUN pip install dlib easydict pyyaml
 RUN cd /cntk/Examples/Image/Detection/utils && git clone https://github.com/CatalystCode/py-faster-rcnn.git && cd py-faster-rcnn/lib && python setup.py build_ext --inplace
