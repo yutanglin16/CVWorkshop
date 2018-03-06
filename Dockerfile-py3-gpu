@@ -15,7 +15,7 @@ RUN bash -c 'git config --system core.longpaths true'
 RUN bash -c 'pip install "git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-vision-customvision&subdirectory=azure-cognitiveservices-vision-customvision"'
 COPY . /cv_workshop
 WORKDIR /cv_workshop
-RUN bash -c 'pip install opencv-python'
+RUN 'pip install opencv-python'
 RUN bash -c 'pip install -r cli-requirements.txt'
 
 RUN bash -c 'python -u cvworkshop_utils.py'  
