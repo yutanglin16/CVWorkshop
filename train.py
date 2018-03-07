@@ -1,5 +1,5 @@
 # Run the following train.py from the notebook to generate a classifier model 
-#from sklearn.svm import SVC
+from sklearn.svm import SVC
 from cvworkshop_utils import ensure_exists
 import pickle
 
@@ -16,7 +16,7 @@ print('Predicted value:', clf.predict([[380, 140, 86]]))
 print('Accuracy', clf.score(X,Y))
 
 print('Export the model to output/trainedModel.pkl')
-#ensure_exists('output')
+ensure_exists('output')
 f = open('output/trainedModel.pkl', 'wb')
 pickle.dump(clf, f)
 f.close()
